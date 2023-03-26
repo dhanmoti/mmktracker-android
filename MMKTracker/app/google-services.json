@@ -1,0 +1,82 @@
+{
+  "project_info": {
+    "project_number": "509134800057",
+    "project_id": "mmk-tracker-1d212",
+    "storage_bucket": "mmk-tracker-1d212.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:509134800057:android:2413e4014e800c86c60768",
+        "android_client_info": {
+          "package_name": "com.devidhan.mmktracker"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "509134800057-6q41rhg69q1gbdg174gt0m0albfvcoge.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDoehcuiRUmL6wcmSyCcLS4x6LaXRNVLjA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "509134800057-6q41rhg69q1gbdg174gt0m0albfvcoge.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "509134800057-9mt24t25hmb30bsj5krv3g64h2cogmdg.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.devidhan.mmktracker.mmktracker"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:509134800057:android:d724d8af00e5bacdc60768",
+        "android_client_info": {
+          "package_name": "com.devidhan.mmktracker.mmktracker"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "509134800057-6q41rhg69q1gbdg174gt0m0albfvcoge.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDoehcuiRUmL6wcmSyCcLS4x6LaXRNVLjA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "509134800057-6q41rhg69q1gbdg174gt0m0albfvcoge.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "509134800057-9mt24t25hmb30bsj5krv3g64h2cogmdg.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.devidhan.mmktracker.mmktracker"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
