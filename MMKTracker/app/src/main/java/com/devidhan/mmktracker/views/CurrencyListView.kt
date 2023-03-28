@@ -21,48 +21,57 @@ import com.devidhan.mmktracker.models.Currency
 
 @Composable
 fun CurrenciesListView(currencies: List<Currency>) {
-    LazyColumn (
-        modifier = Modifier.padding(8.dp),
-        verticalArrangement = Arrangement.spacedBy(16.dp)) {
-        items(currencies){ c ->
-            Column(modifier = Modifier
-                .fillMaxSize()
-                .clickable {
-                    println("item clicked!")
-                }) {
+    Column() {
+        LazyColumn (
+            modifier = Modifier.padding(8.dp),
+            verticalArrangement = Arrangement.spacedBy(16.dp)) {
+            items(currencies){ c ->
+                Column(modifier = Modifier
+                    .fillMaxSize()
+                    .clickable {
+                        println("item clicked!")
+                    }) {
 
-                Spacer(modifier = Modifier.width(16.dp))
+                    Spacer(modifier = Modifier.width(16.dp))
 
-                c.title?.let {
-                    Text(text = it, modifier = Modifier.fillMaxSize(),
-                        fontSize = 24.sp,
-                        fontWeight = FontWeight.Light)
-                }
-
-                Row(verticalAlignment = Alignment.CenterVertically) {
-                    c.shortTitle?.let {
-                        Text(text = it,
-                            fontSize = 48.sp,
-                            fontWeight = FontWeight.Normal,
-                            color = Color(59,135,212)
-                        )
+                    c.title?.let {
+                        Text(text = it, modifier = Modifier.fillMaxSize(),
+                            fontSize = 24.sp,
+                            fontWeight = FontWeight.Light)
                     }
 
-                    Spacer(modifier = Modifier.width(16.dp))
-                    Icon(Icons.Rounded.ArrowForward,
-                        contentDescription = "Localized description")
-                    Spacer(modifier = Modifier.width(16.dp))
-                    
-                    c.rate?.let {
-                        Text(text = it, 
-                            fontSize = 48.sp,
-                            fontWeight = FontWeight.Normal,
-                            color = Color(59,135,212))
-                    }
+                    Row(verticalAlignment = Alignment.CenterVertically) {
+                        c.shortTitle?.let {
+                            Text(text = it,
+                                fontSize = 48.sp,
+                                fontWeight = FontWeight.Normal,
+                                color = Color(59,135,212)
+                            )
+                        }
 
-                    Spacer(modifier = Modifier.width(16.dp))
+                        Spacer(modifier = Modifier.width(16.dp))
+                        Icon(Icons.Rounded.ArrowForward,
+                            contentDescription = "Localized description")
+                        Spacer(modifier = Modifier.width(16.dp))
+
+                        c.rate?.let {
+                            Text(text = it,
+                                fontSize = 48.sp,
+                                fontWeight = FontWeight.Normal,
+                                color = Color(59,135,212))
+                        }
+
+                        Spacer(modifier = Modifier.width(16.dp))
+                    }
                 }
             }
         }
+
+        Spacer(modifier = Modifier.height(16.dp))
+        Text(text = "Source: forex.cbm.gov.mm",
+            Modifier.padding(8.dp),
+                    fontSize = 16.sp,
+            fontWeight = FontWeight.Light,
+        )
     }
 }
