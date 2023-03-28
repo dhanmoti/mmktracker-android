@@ -13,6 +13,7 @@ import androidx.compose.material.icons.rounded.Menu
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
@@ -42,7 +43,9 @@ fun CurrenciesListView(currencies: List<Currency>) {
                     c.shortTitle?.let {
                         Text(text = it,
                             fontSize = 48.sp,
-                            fontWeight = FontWeight.Normal)
+                            fontWeight = FontWeight.Normal,
+                            color = Color(59,135,212)
+                        )
                     }
 
                     Spacer(modifier = Modifier.width(16.dp))
@@ -53,7 +56,8 @@ fun CurrenciesListView(currencies: List<Currency>) {
                     c.rate?.let {
                         Text(text = it, 
                             fontSize = 48.sp,
-                            fontWeight = FontWeight.Normal)
+                            fontWeight = FontWeight.Normal,
+                            color = Color(59,135,212))
                     }
 
                     Spacer(modifier = Modifier.width(16.dp))
