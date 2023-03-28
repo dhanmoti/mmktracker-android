@@ -41,9 +41,16 @@ fun CurrenciesListView(currencies: List<Currency>) {
                     }
 
                     Row(verticalAlignment = Alignment.CenterVertically) {
+                        c.base?.let {
+                            Text(text = it,
+                                fontSize = 32.sp,
+                                fontWeight = FontWeight.Normal,
+                                color = Color(59,135,212)
+                            )
+                        }
                         c.shortTitle?.let {
                             Text(text = it,
-                                fontSize = 48.sp,
+                                fontSize = 32.sp,
                                 fontWeight = FontWeight.Normal,
                                 color = Color(59,135,212)
                             )
@@ -55,8 +62,8 @@ fun CurrenciesListView(currencies: List<Currency>) {
                         Spacer(modifier = Modifier.width(16.dp))
 
                         c.rate?.let {
-                            Text(text = it,
-                                fontSize = 48.sp,
+                            Text(text = "$it MMK",
+                                fontSize = 32.sp,
                                 fontWeight = FontWeight.Normal,
                                 color = Color(59,135,212))
                         }
