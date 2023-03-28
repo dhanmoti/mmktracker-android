@@ -1,14 +1,17 @@
 package com.devidhan.mmktracker.views
 
+import androidx.compose.foundation.Image
 import androidx.compose.foundation.clickable
-import androidx.compose.foundation.layout.Arrangement
-import androidx.compose.foundation.layout.Row
-import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
+import androidx.compose.material.Icon
 import androidx.compose.material.Text
+import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.rounded.ArrowForward
+import androidx.compose.material.icons.rounded.Menu
 import androidx.compose.runtime.Composable
+import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
@@ -21,18 +24,39 @@ fun CurrenciesListView(currencies: List<Currency>) {
         modifier = Modifier.padding(8.dp),
         verticalArrangement = Arrangement.spacedBy(16.dp)) {
         items(currencies){ c ->
-            Row(modifier = Modifier.fillMaxSize().clickable {
-                println("item clicked!")
-            }) {
+            Column(modifier = Modifier
+                .fillMaxSize()
+                .clickable {
+                    println("item clicked!")
+                }) {
+
+                Spacer(modifier = Modifier.width(16.dp))
+
                 c.title?.let {
-                    Text(text = it, modifier = Modifier.fillMaxSize(),
-                        fontSize = 16.sp,
-                        fontWeight = FontWeight.Light)
-                }
-                c.rate?.let {
                     Text(text = it, modifier = Modifier.fillMaxSize(),
                         fontSize = 24.sp,
                         fontWeight = FontWeight.Light)
+                }
+
+                Row(verticalAlignment = Alignment.CenterVertically) {
+                    c.shortTitle?.let {
+                        Text(text = it,
+                            fontSize = 48.sp,
+                            fontWeight = FontWeight.Normal)
+                    }
+
+                    Spacer(modifier = Modifier.width(16.dp))
+                    Icon(Icons.Rounded.ArrowForward,
+                        contentDescription = "Localized description")
+                    Spacer(modifier = Modifier.width(16.dp))
+                    
+                    c.rate?.let {
+                        Text(text = it, 
+                            fontSize = 48.sp,
+                            fontWeight = FontWeight.Normal)
+                    }
+
+                    Spacer(modifier = Modifier.width(16.dp))
                 }
             }
         }
