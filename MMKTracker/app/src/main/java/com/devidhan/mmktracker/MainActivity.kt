@@ -27,6 +27,7 @@ import androidx.compose.ui.unit.sp
 import com.devidhan.mmktracker.models.Currency
 import com.devidhan.mmktracker.ui.theme.MMKTrackerTheme
 import com.devidhan.mmktracker.views.CurrenciesListView
+import com.devidhan.mmktracker.services.Fetcher
 import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.firestore.ktx.toObject
 import com.google.firebase.ktx.Firebase
@@ -48,36 +49,10 @@ class MainActivity : ComponentActivity() {
 @Composable
 fun MMKTrackerApp() {
     var currencies = mutableStateListOf<Currency>()
-    fetch(currencies)
+    Fetcher(currencies)
     CurrenciesListView(currencies)
 }
 
-@Composable
-private fun fetch(currencies: SnapshotStateList<Currency>) {
-    var db = Firebase.firestore
-
-    db.collection("currencies")
-        .document("centralbank")
-        .get()
-        .addOnSuccessListener { doc ->
-            //currencies.add(Currency(title = "testing 11..."))
-            val array = doc.get("rates") as? ArrayList<HashMap<String, String>>
-            val itr = array?.iterator()
-            if (itr != null) {
-                while (itr.hasNext()) {
-                    val c = itr.next()
-                    currencies.add(
-                        Currency(
-                            title = c["title"],
-                            code = c["code"],
-                            rate = c["rate"],
-                            timestamp = c["timestamp"]
-                        )
-                    )
-                }
-            }
-        }
-}
 
 
 
