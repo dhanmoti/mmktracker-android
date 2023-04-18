@@ -10,11 +10,10 @@ import com.google.firebase.ktx.Firebase
 fun Fetcher(currencies: SnapshotStateList<Currency>) {
     var db = Firebase.firestore
 
-    db.collection("currencies")
-        .document("centralbank")
+    db.collection("central-bank-mm")
+        .document("decorated-currencies-rates")
         .get()
         .addOnSuccessListener { doc ->
-            //currencies.add(Currency(title = "testing 11..."))
             val array = doc.get("rates") as? ArrayList<HashMap<String, String>>
             val itr = array?.iterator()
             if (itr != null) {
